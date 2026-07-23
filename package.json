@@ -1,0 +1,61 @@
+{
+  "name": "@nebutra/tokens",
+  "version": "0.1.1",
+  "description": "Unified theme tokens and theme-provider entry for Nebutra apps",
+  "private": false,
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": [
+    "./styles.css",
+    "./recipe.css",
+    "./skins/*.css",
+    "./brands/*/skin.css"
+  ],
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./styles.css": "./styles.css",
+    "./recipe.css": "./recipe.css",
+    "./skins/*": "./skins/*",
+    "./brands/*": "./brands/*",
+    "./brand-package": "./src/brand-package/index.ts",
+    "./use-brand": "./src/brand-package/use-brand.ts"
+  },
+  "scripts": {
+    "build": "node scripts/sync-styles.mjs",
+    "sync": "node scripts/sync-styles.mjs",
+    "compile-brand": "node scripts/compile-brand.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test src/brand-package/__tests__/*.test.ts"
+  },
+  "dependencies": {
+    "@nebutra/design-tokens": "^0.1.1",
+    "next-themes": "^0.4.6"
+  },
+  "peerDependencies": {
+    "react": "^19"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.14",
+    "typescript": "^5.9.3"
+  },
+  "homepage": "https://github.com/Nebutra/tokens#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nebutra/tokens.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Nebutra/tokens/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "nebutraMirror": {
+    "sourceRepository": "Nebutra/Nebutra-Sailor",
+    "sourceDirectory": "packages/design/tokens",
+    "sourcePackage": "@nebutra/tokens",
+    "sourceSha": "325d10b1e9fe35a6945cc0d01c33dbd04566bca3",
+    "canonicalSource": "monorepo"
+  }
+}
